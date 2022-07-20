@@ -1,26 +1,7 @@
-function sort(tab)
-{
-    var changed;
-    do{
-        changed = false;
-        for(var i=0; i < tab.length-1; i++) {
-            if(tab[i] < tab[i+1]) {
-                var tmp = tab[i];
-                tab[i] = tab[i+1];
-                tab[i+1] = tmp;
-                changed = true;
-            }
-        }
-    } while(changed);
-}
 var tab = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
-sort(tab);
+tab.sort((x, y) => y - x);
 console.log(tab);
-let sum = 0;
-
-for (let i = 0; i < tab.length; i++) {
-    sum += tab[i];
-}
+const sum = tab.reduce((acc, cur) => acc + cur, 0);
 console.log(sum);
 const animals = ['ant', 'bison', 'camel', 'duck', 'elephant','lion', 'dog'];
 animals.pop();
